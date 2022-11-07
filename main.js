@@ -109,5 +109,14 @@ let over70over120Variant = students.filter((element) => {
 
 console.log(over70over120Variant);
 
+// terza modalità
 
+let thirdVariant = over70.filter((element) => {
+    if(element.id > 120){
+        return true;
+    }
+    return false;
+});
+
+console.log(thirdVariant);
 
