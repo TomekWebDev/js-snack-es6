@@ -33,16 +33,36 @@ for(i = 0; i < teams.length; i++){
 
 console.log(teams);
 
-let newArray = [];
+// let newArray = [];
 
-for(i = 0; i < teams.length; i++){
-    let {nome, fouls} = teams[i];
-    let obj = {...teams.fouls, nome, fouls}
+// for(i = 0; i < teams.length; i++){
+//     let {nome, fouls} = teams[i];
+//     let obj = {...teams.nome, nome, fouls}
 
-    newArray.push(obj)
-}
+//     newArray.push(obj)
+// }
 
-console.log(newArray);
+// console.log(newArray);
+
+/**
+
+in questo ciclo ad ogni giro destruttura un oggetto per volta in nome e falli,
+e li salva provvisoriamente.
+
+lo SPREAD (...array.proprietà) va a prendere l'oggetto che riconosce grazie alla proprietà
+che gli passi. 
+Le proprietà che specifichi dopo (nome, fouls) sono quelle che vengono salvate nel nuovo oggetto.
+
+il nuovo oggetto viene pushato nella nuova array
 
 
+**/
 
+//tentativo con map() di fare la stessa cosa passando solo i parametri che voglio io
+// c'è un modo di scrivere map in cui gli dico:
+// prendi queste due proprietà dall'oggetto che sto mappando e usale 
+// per creare un oggetto per la nuova array che abbia SOLO quelle due proprietà
+
+let arrayNuova = teams.map((element, nome, fouls) => element, {nome, fouls})
+
+console.log(arrayNuova);
